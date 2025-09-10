@@ -8,17 +8,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Are you sure you want to submit your answer?');
             } else {
                 alert('You have clicked ' + this.id);
+                runGamepad(this.id);
             }
         });
     }
+    // Display the first addition question automatically
+    runGamepad('addition');
 });
 
 // Generate a random integer between 1 and 25 inclusive
-let x =  Math.floor(Math.random() * 25) + 1;
-let y =  Math.floor(Math.random() * 25) + 1;
+function getRandomInt1to25() {
+    return Math.floor(Math.random() * 25) + 1;
+}
 
-function runGamepad() {
-    
+function runGamepad(buttonId) {
+    let x = getRandomInt1to25();
+    let y = getRandomInt1to25();
+    if (buttonId === 'addition') {
+        let actualAnswer = x + y;
+        document.getElementById('num1').textContent = x;
+        document.getElementById('operator').textContent = '+';
+        document.getElementById('num2').textContent = y;
+        // Optionally store actualAnswer for checking later
+        // console.log(`What is ${x} + ${y}?`);
+        // console.log(`The answer is ${actualAnswer}`);
+    }
+    // Add more logic for other operations as needed
 }
 
 // actualAnswer
@@ -28,7 +43,13 @@ function runGamepad() {
 // decrease total
 
 // Display plusquestion
-
+function displayPlusQuestion() {
+    let x = getRandomInt1to25();
+    let y = getRandomInt1to25();
+    let actualAnswer = x + y;
+    console.log(`What is ${x} + ${y}?`);
+    console.log(`The answer is ${actualAnswer}`);
+}
 // Display minusquestion
 
 // Display multiplyquestion
