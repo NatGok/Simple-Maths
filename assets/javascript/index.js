@@ -1,3 +1,11 @@
+// Track correct and incorrect answers
+let correctTotal = 0;
+let incorrectTotal = 0;
+
+function updateScoreDisplay() {
+    document.querySelector('.right').textContent = 'Correct Answers: ' + correctTotal;
+    document.querySelector('.wrong').textContent = 'Incorrect Answers: ' + incorrectTotal;
+}
 document.addEventListener('DOMContentLoaded', function() {
     let selection = document.getElementsByTagName('button');
     for (let button of selection) {
@@ -52,10 +60,26 @@ function checkAnswer() {
     } else if (operator === '/') {
         actualAnswer = x / y;
     }
+    let currentOperator = operator;
     if (theirGuess === actualAnswer) {
+        correctTotal++;
+        updateScoreDisplay();
         alert("Correct!");
     } else {
+        incorrectTotal++;
+        updateScoreDisplay();
         alert("The answer was in fact " + actualAnswer);
     }
+    // Automatically present a new question of the same type
+    let opId = '';
+    if (currentOperator === '+') opId = 'addition';
+    else if (currentOperator === '-') opId = 'subtraction';
+    else if (currentOperator === 'x') opId = 'multiplication';
+    else if (currentOperator === '/') opId = 'division';
+    if (opId) {
+        runGamepad(opId);
+    }
 }
+
+
 
