@@ -1,7 +1,12 @@
 body {
-    background-color: lightpink;
-
-   font-family: "Bricolage", cursive;
+  background-color: lightpink;
+  font-family: "Bricolage", cursive;
   font-weight: 400;
   font-style: normal;
-}}
+}
+
+.challenge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}

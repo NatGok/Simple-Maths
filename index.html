@@ -8,13 +8,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/222ac34050.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1><img src="assets/images/logo.png" alt="heart logo with math simples in the 3 edges of the heart" width="300" height="200">Hello World</h1>
 
     <div class="deskpad">
+<div class="options">
+    <button id="addition">Addition</button>
+    <i class="fa-solid fa-plus"></i>
+    <button id="subtraction">Subtraction</button>
+    <i class="fa-solid fa-minus"></i>
+    <button id="multiplication">Multiplication</button>
+    <i class="fa-solid fa-xmark"></i>
+    <button id="division">Division</button>
+    <i class="fa-solid fa-divide"></i>
+</div>
+<div class="challenge" id="challenge">
+    <div class="challenge-row">
+    <span id="num1">0</span>
+    <span id="operator">+</span>
+    <span id="num2">0</span>
+    <span>=</span>
+        <input type="number" id="answer" autocomplete="off" autofocus>
+        <button id="submit">Submit</button>
+    </div>
 
-
+</div>
     </div>
 
     <div class="score">
