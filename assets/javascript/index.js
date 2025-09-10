@@ -90,14 +90,17 @@ function checkAnswer() {
         actualAnswer = x / y;
     }
     let currentOperator = operator;
+    const msgElem = document.getElementById('answer-message');
     if (theirGuess === actualAnswer) {
         correctTotal++;
         updateScoreDisplay();
-        alert("Correct!");
+        msgElem.textContent = 'Correct!';
+        msgElem.style.color = 'green';
     } else {
         incorrectTotal++;
         updateScoreDisplay();
-        alert("The answer was in fact " + actualAnswer);
+        msgElem.textContent = 'The answer was in fact ' + actualAnswer;
+        msgElem.style.color = 'black';
     }
     // Automatically present a new question of the same type
     let nxtchallenge = '';
