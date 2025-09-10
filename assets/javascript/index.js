@@ -14,6 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // Display the first addition question automatically
     runGamepad('addition');
+
+    // Allow pressing Enter in the answer input to submit
+    const answerInput = document.getElementById('answer');
+    if (answerInput) {
+        answerInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                checkAnswer();
+            }
+        });
+    }
 });
 
 // Generate a random integer between 1 and 25 inclusive
@@ -22,6 +33,12 @@ function getRandomInt1to25() {
 }
 
 function runGamepad(buttonId) {
+
+    // Clear and focus the answer input box
+    const answerInput = document.getElementById('answer');
+    answerInput.value = '';
+    answerInput.focus();
+
     let x = getRandomInt1to25();
     let y = getRandomInt1to25();
     if (buttonId === 'addition') {
