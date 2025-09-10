@@ -7,10 +7,14 @@
     .options > button:nth-child(4) {
         /* Second row: multiplication and division */
     }
-}
+
 
 body {
     background-color: lightpink;
+    background-image: linear-gradient(rgba(255,192,203,0.85), rgba(255,192,203,0.85)), url('../images/mathsBG.png');
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
     font-family: "Bricolage", cursive;
     font-weight: 300;
     font-style: normal;
