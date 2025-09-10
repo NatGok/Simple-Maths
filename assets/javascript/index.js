@@ -71,13 +71,13 @@ function checkAnswer() {
         alert("The answer was in fact " + actualAnswer);
     }
     // Automatically present a new question of the same type
-    let opId = '';
-    if (currentOperator === '+') opId = 'addition';
-    else if (currentOperator === '-') opId = 'subtraction';
-    else if (currentOperator === 'x') opId = 'multiplication';
-    else if (currentOperator === '/') opId = 'division';
-    if (opId) {
-        runGamepad(opId);
+    let nxtchallenge = '';
+    if (currentOperator === '+') nxtchallenge = 'addition';
+    else if (currentOperator === '-') nxtchallenge = 'subtraction';
+    else if (currentOperator === 'x') nxtchallenge = 'multiplication';
+    else if (currentOperator === '/') nxtchallenge = 'division';
+    if (nxtchallenge) {
+        runGamepad(nxtchallenge);
     }
 }
 
