@@ -1,11 +1,4 @@
-// Track correct and incorrect answers
-let correctTotal = 0;
-let incorrectTotal = 0;
 
-function updateScoreDisplay() {
-    document.querySelector('.right').textContent = 'Correct Answers: ' + correctTotal;
-    document.querySelector('.wrong').textContent = 'Incorrect Answers: ' + incorrectTotal;
-}
 document.addEventListener('DOMContentLoaded', function() {
     let selection = document.getElementsByTagName('button');
     for (let button of selection) {
@@ -14,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Use this.id to check the clicked button
             if (this.id === 'submit') {
                checkAnswer();
-            } else {
- 
+            } else { 
                 runGamepad(this.id);
             }
         });
@@ -41,6 +33,12 @@ function runGamepad(buttonId) {
         // console.log(`What is ${x} + ${y}?`);
         // console.log(`The answer is ${actualAnswer}`);
     }
+    else if (buttonId === 'multiplication') {
+    let actualAnswer = x - y;
+    document.getElementById('num1').textContent = x;
+    document.getElementById('operator').textContent = 'x';
+    document.getElementById('num2').textContent = y;
+}
     // Add more logic for other operations as needed
 }
 
@@ -55,7 +53,7 @@ function checkAnswer() {
         actualAnswer = x + y;
     } else if (operator === '-') {
         actualAnswer = x - y;
-    } else if (operator === 'x') {
+    } else if (operator === "x") {
         actualAnswer = x * y;
     } else if (operator === '/') {
         actualAnswer = x / y;
@@ -82,4 +80,11 @@ function checkAnswer() {
 }
 
 
+// Track correct and incorrect answers
+let correctTotal = 0;
+let incorrectTotal = 0;
 
+function updateScoreDisplay() {
+    document.querySelector('.right').textContent = 'Correct Answers: ' + correctTotal;
+    document.querySelector('.wrong').textContent = 'Incorrect Answers: ' + incorrectTotal;
+}
