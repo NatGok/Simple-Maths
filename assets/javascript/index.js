@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Prevent form submission if inside a form
             // Use this.id to check the clicked button
             if (this.id === 'submit') {
-                alert('Are you sure you want to submit your answer?');
+               checkAnswer();
             } else {
-                alert('You have clicked ' + this.id);
+ 
                 runGamepad(this.id);
             }
         });
@@ -36,23 +36,26 @@ function runGamepad(buttonId) {
     // Add more logic for other operations as needed
 }
 
-// actualAnswer
 
-// Increase total
-
-// decrease total
-
-// Display plusquestion
-function displayPlusQuestion() {
-    let x = getRandomInt1to25();
-    let y = getRandomInt1to25();
-    let actualAnswer = x + y;
-    console.log(`What is ${x} + ${y}?`);
-    console.log(`The answer is ${actualAnswer}`);
+function checkAnswer() {
+    let x = parseInt(document.getElementById('num1').textContent);
+    let y = parseInt(document.getElementById('num2').textContent);
+    let operator = document.getElementById('operator').textContent;
+    let theirGuess = parseInt(document.getElementById('answer').value);
+    let actualAnswer;
+    if (operator === '+') {
+        actualAnswer = x + y;
+    } else if (operator === '-') {
+        actualAnswer = x - y;
+    } else if (operator === 'x') {
+        actualAnswer = x * y;
+    } else if (operator === '/') {
+        actualAnswer = x / y;
+    }
+    if (theirGuess === actualAnswer) {
+        alert("Correct!");
+    } else {
+        alert("The answer was in fact " + actualAnswer);
+    }
 }
-// Display minusquestion
 
-// Display multiplyquestion
-
-// Display divisionsquestion
- 
