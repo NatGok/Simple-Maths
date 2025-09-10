@@ -1,77 +1,14 @@
-@media (max-width: 320px) {
-        .challenge-row {
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.5em;
-        }
-        .challenge-row span {
-            flex: 0 0 auto;
-            text-align: center;
-            min-width: 1.5em;
-            font-size: 1.1rem;
-        }
-        .challenge-row input,
-        .challenge-row button {
-            width: 100%;
-            margin: 0.25em 0 0 0;
-            font-size: 1rem;
-            flex-basis: 100%;
-            display: block;
-        }
-        .challenge-row input {
-            margin-top: 0.5em;
-        }
-    .score {
-        width: 100%;
-        margin-top: 0.5em;
-        display: block;
-        text-align: center;
-        padding: 10px 0 0 0;
-        position: static;
-        order: 2;
+
+    .options > button:nth-child(1),
+    .options > button:nth-child(2) {
+        /* First row: addition and subtraction */
+    }
+    .options > button:nth-child(3),
+    .options > button:nth-child(4) {
+        /* Second row: multiplication and division */
     }
 }
-@media (max-width: 530px) {
-    .deskpad {
-        width: 98%;
-        height: 60vh;
-        max-width: 100%;
-        max-height: none;
-        min-height: 320px;
-        padding: 2%;
-    }
-}
-@media (max-width: 530px) {
-        .options {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 10px;
-        }
-            .options > button, .options > i {
-                width: 100%;
-                margin: 0;
-                font-size: 1rem;
-                display: block;
-            }
-            .options > button {
-                text-align: left;
-                height: 40px;
-                font-size: 1rem;
-                padding: 6px 8px;
-            }
-            .options > i {
-                text-align: right;
-                margin-top: -30px;
-                margin-bottom: 8px;
-                font-size: 1.2rem;
-                display: block;
-            }
-            .options > button, .options > i {
-                margin-bottom: 0;
-            }
-}
+
 body {
     background-color: lightpink;
     font-family: "Bricolage", cursive;
@@ -138,8 +75,17 @@ h1 {
 
 
 .score {
-    display: inline-block;
-    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 25px 0 0 0;
+    text-align: center;
+    font-size: 1.1rem;
+}
+.score .right, .score .wrong {
+    margin: 0 10px;
+    min-width: 120px;
 }
 
 /* --------- Buttons */
@@ -175,4 +121,69 @@ h1 {
     transition: all 0.5s;
 }
 
-
+@media (max-width: 530px) {
+    .options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+            .options {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .options > button {
+                flex: 1 1 45%;
+                min-width: 120px;
+                max-width: 48%;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .challenge-row {
+                width: 90%;
+                margin: 0 auto;
+                font-size: 1.2rem;
+            }
+        margin: 0;
+        box-sizing: border-box;
+    }
+@media (max-width: 530px) {
+    .main-container {
+        transform: scale(calc(80vw / 530));
+        transform-origin: top center;
+        width: 530px;
+        overflow-x: auto;
+    }
+    .deskpad {
+        height: 80vh;
+        max-height: 350px;
+    }
+    .options {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .options > button, .options > i {
+        width: 100%;
+        margin: 0;
+        font-size: 1rem;
+        display: block;
+    }
+    .options > button {
+        text-align: left;
+        height: 40px;
+        font-size: 1rem;
+        padding: 6px 8px;
+    }
+    .options > i {
+        text-align: right;
+        margin-top: -30px;
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+        display: block;
+    }
+    .options > button, .options > i {
+        margin-bottom: 0;
+    }
+}

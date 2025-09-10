@@ -29,17 +29,22 @@ function runGamepad(buttonId) {
         document.getElementById('num1').textContent = x;
         document.getElementById('operator').textContent = '+';
         document.getElementById('num2').textContent = y;
-        // Optionally store actualAnswer for checking later
-        // console.log(`What is ${x} + ${y}?`);
-        // console.log(`The answer is ${actualAnswer}`);
+    } else if (buttonId === 'subtraction') {
+        if (y > x) {
+            let temp = x;
+            x = y;
+            y = temp;
+        }
+        let actualAnswer = x - y;
+        document.getElementById('num1').textContent = x;
+        document.getElementById('operator').textContent = '-';
+        document.getElementById('num2').textContent = y;
+	} else if (buttonId === 'multiplication') {
+        let actualAnswer = x * y;
+        document.getElementById('num1').textContent = x;
+        document.getElementById('operator').textContent = 'x';
+        document.getElementById('num2').textContent = y;
     }
-    else if (buttonId === 'multiplication') {
-    let actualAnswer = x - y;
-    document.getElementById('num1').textContent = x;
-    document.getElementById('operator').textContent = 'x';
-    document.getElementById('num2').textContent = y;
-}
-    // Add more logic for other operations as needed
 }
 
 
@@ -47,7 +52,7 @@ function checkAnswer() {
     let x = parseInt(document.getElementById('num1').textContent);
     let y = parseInt(document.getElementById('num2').textContent);
     let operator = document.getElementById('operator').textContent;
-    let theirGuess = parseInt(document.getElementById('answer').value);
+   let theirGuess = parseInt(document.getElementById('answer').value);
     let actualAnswer;
     if (operator === '+') {
         actualAnswer = x + y;
