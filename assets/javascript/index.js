@@ -13,9 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// run Gamepad
+// Generate a random integer between 1 and 25 inclusive
+let x =  Math.floor(Math.random() * 25) + 1;
+let y =  Math.floor(Math.random() * 25) + 1;
 
-// check thought
+function runGamepad() {
+    
+}
 
 // actualAnswer
 
