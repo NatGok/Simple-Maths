@@ -56,10 +56,19 @@ function runGamepad(buttonId) {
         document.getElementById('num1').textContent = x;
         document.getElementById('operator').textContent = '-';
         document.getElementById('num2').textContent = y;
-	} else if (buttonId === 'multiplication') {
+    } else if (buttonId === 'multiplication') {
         let actualAnswer = x * y;
         document.getElementById('num1').textContent = x;
         document.getElementById('operator').textContent = 'x';
+        document.getElementById('num2').textContent = y;
+    } else if (buttonId === 'division') {
+        // Ensure x is a multiple of y for whole number answers
+        y = getRandomInt1to25();
+        let multiplier = getRandomInt1to25();
+        x = y * multiplier;
+        let actualAnswer = x / y;
+        document.getElementById('num1').textContent = x;
+        document.getElementById('operator').textContent = '/';
         document.getElementById('num2').textContent = y;
     }
 }
