@@ -68,7 +68,7 @@ function runGamepad(buttonId) {
         x = y * multiplier;
         let actualAnswer = x / y;
         document.getElementById('num1').textContent = x;
-        document.getElementById('operator').textContent = '/';
+        document.getElementById('operator').textContent = '÷';
         document.getElementById('num2').textContent = y;
     }
 }
@@ -86,7 +86,7 @@ function checkAnswer() {
         actualAnswer = x - y;
     } else if (operator === "x") {
         actualAnswer = x * y;
-    } else if (operator === '/') {
+    } else if (operator === '÷' || operator === '/') {
         actualAnswer = x / y;
     }
     let currentOperator = operator;
